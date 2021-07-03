@@ -1,4 +1,7 @@
-import { createStore } from "@reduxjs/toolkit";
+import { createStore, applyMiddleware } from "@reduxjs/toolkit";
+
+// import ReduxThunk from "redux-thunk";
+import thunk from "redux-thunk";
 
 const initState = {
   counter: 100,
@@ -11,14 +14,17 @@ const DECREMENT_ACTION_TYPE = "DECREMENT";
 const ADD_TODO_ACTION_TYPE = "ADD_TODO";
 
 export function incrementAction() {
+  //WE ARE UPDATING THE UI
   return { type: INCREMENT_ACTION_TYPE };
 }
 
 export function decrementAction() {
+  //WE ARE UPDATING THE UI
   return { type: DECREMENT_ACTION_TYPE };
 }
 
 export function addTodoAction(payload) {
+  //WE ARE UPDATING THE UI
   return { type: ADD_TODO_ACTION_TYPE, payload: payload };
 }
 
@@ -41,5 +47,6 @@ function AppReducer(state = initState, action) {
       return state;
   }
 }
-const store = createStore(AppReducer);
+// const store = createStore(AppReducer);
+const store = createStore(AppReducer, applyMiddleware(thunk));
 export { store };
