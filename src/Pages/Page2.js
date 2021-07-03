@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -27,6 +28,9 @@ export function Page2() {
   const getTodoList = () => {
     dispatch(getTodoListAction());
   };
+
+  //Constructor:: to get the api call-GET automatically without clicking the button
+  useEffect(() => dispatch(getTodoListAction()), []);
 
   return (
     <div>
