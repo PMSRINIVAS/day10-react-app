@@ -3,6 +3,10 @@ import "./App.css";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import { Page1 } from "./Pages/Page1";
+import { Page2 } from "./Pages/Page2";
+import { Page3 } from "./Pages/Page3";
+
 function App() {
   return (
     <Router>
@@ -29,40 +33,4 @@ function App() {
   );
 }
 
-function Page1() {
-  return (
-    <div>
-      <h1>Page1</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-        asperiores qui aperiam expedita suscipit amet quaerat. Odit voluptatibus
-        labore officiis?
-      </p>
-    </div>
-  );
-}
-
-function Page2() {
-  return (
-    <div>
-      <h1>Page2</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, totam
-        iste. Quaerat vero ea suscipit error voluptate dolore totam quam!
-      </p>
-    </div>
-  );
-}
-function Page3() {
-  return (
-    <div>
-      <h1>Page3</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, neque
-        sapiente! Quibusdam aliquid reiciendis totam officiis quidem voluptate,
-        tenetur quae!
-      </p>
-    </div>
-  );
-}
 export default App;
