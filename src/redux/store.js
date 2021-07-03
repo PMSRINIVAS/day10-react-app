@@ -14,6 +14,11 @@ export function decrementAction() {
   return { type: "DECREMENT" };
 }
 
+export function addTodoAction(payload) {
+  return { type: "ADD_TODO", payload: payload };
+}
+
+//ACTION :: TYPE & PAYLOAD
 function AppReducer(state = initState, action) {
   switch (action.type) {
     case "INCREMENT":
@@ -23,6 +28,10 @@ function AppReducer(state = initState, action) {
     case "DECREMENT":
       const newCounter1 = state.counter - 10;
       return { ...state, counter: newCounter1 };
+
+    case "ADD_TODO":
+      const newtodolist = [action.payload, ...state.todoList];
+      return { ...state, todoList: newtodolist };
 
     default:
       return state;
