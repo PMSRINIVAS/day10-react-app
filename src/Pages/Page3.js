@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
+import { incrementAction } from "../redux/store";
 
 export function Page3() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
 
   const increment = () => {
-    //Logic is not given here. its in store.js
-    dispatch({ type: "INCREMENT" });
+    dispatch(incrementAction());
   };
 
   return (

@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { decrementAction, incrementAction } from "../redux/store";
 
 export function Page1() {
   const dispatch = useDispatch();
@@ -6,17 +7,14 @@ export function Page1() {
   //By using state=> state, we are selecting all the things in store
   const state = useSelector((state) => state);
 
-  //filter out :: t-shirt- counter
-  //   const counter = useSelector((state) => state.counter);
-
   const increment = () => {
-    //Logic is not given here. its in store.js
-    dispatch({ type: "INCREMENT" });
+    //   dispatch({type:"INCREMENT"});
+    dispatch(incrementAction());
   };
 
   const decrement = () => {
-    //Logic is not given here. its in store.js
-    dispatch({ type: "DECREMENT" });
+    // dispatch({ type: "DECREMENT" });
+    dispatch(decrementAction());
   };
 
   return (
@@ -38,7 +36,6 @@ export function Page1() {
         className="btn btn-info w-100"
       />
 
-      {/* <div className="alert alert-secondary">{counter}</div> */}
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
         asperiores qui aperiam expedita suscipit amet quaerat. Odit voluptatibus
